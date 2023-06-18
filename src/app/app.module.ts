@@ -7,12 +7,16 @@ import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PostComponent } from './post/post.component';
+import { PostListComponent } from './post-list/post-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
