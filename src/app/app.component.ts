@@ -9,6 +9,7 @@ export class AppComponent implements  AfterViewInit{
   title = 'Paul Angular';
   parentMessage:string = 'Message coming from parent component'
   message!: string;
+  fromChildOutput!: string;
   @ViewChild(PostComponent)
   childComp!: PostComponent;
   constructor(private changeDetectorRef: ChangeDetectorRef){}
@@ -17,6 +18,6 @@ export class AppComponent implements  AfterViewInit{
     this.changeDetectorRef.detectChanges();
   }
   receiveMessage($event: any) {
-console.log($event);
+this.fromChildOutput = $event;
   }
 }
