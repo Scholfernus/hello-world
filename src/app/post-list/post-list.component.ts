@@ -6,7 +6,7 @@ import { Component,OnInit,Input } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit{
-  @Input() fromPostParent:string='';
+  @Input() fromPostParent:string=' ';
   
   constructor(){}
   ngOnInit(): void {
