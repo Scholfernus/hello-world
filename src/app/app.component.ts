@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { PostComponent } from './post/post.component';
 @Component({
   selector: 'app-root',
@@ -10,17 +10,13 @@ export class AppComponent implements  AfterViewInit{
   parentMessage:string = 'Message coming from parent component'
   message!: string;
   @ViewChild(PostComponent)
-  childComp!: { childMessage: string; };
-  constructor(){
-    console.log(this.childComp);
-  }
+  childComp!: PostComponent;
+  constructor(private changeDetectorRef: ChangeDetectorRef){}
   ngAfterViewInit(): void {
-      console.log(this.childComp);
-      this.message = this.childComp.childMessage;
+    this.message = this.childComp.childMessage;
+    this.changeDetectorRef.detectChanges();
   }
   receiveMessage($event: any) {
 console.log($event);
-
   }
-
 }
